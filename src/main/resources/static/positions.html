@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search by Position</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="players.html">Players</a></li>
+            <li><a href="clubs.html">Clubs</a></li>
+            <li><a href="countries.html">Countries</a></li>
+            <li><a href="positions.html">Position</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section id="positions">
+        <h2>Select a Position</h2>
+
+        <div id="dropdown-container">
+            <label for="position-dropdown">Select a Position:</label>
+            <select id="position-dropdown">
+                <option value="" disabled selected>Select a Position</option>
+                <option value="Forward">Forward</option>
+                <option value="Midfielder">Midfielder</option>
+                <option value="Defender">Defender</option>
+                <option value="Goalkeeper">Goalkeeper</option>
+            </select>
+        </div>
+
+        <section id="position-stats-section" style="display:none;">
+            <h2>Players in <span id="position-name"></span> Position</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Nation</th>
+                        <th>Position</th>
+                        <th>Club</th>
+                        <th>Age</th>
+                        <th>Year Born</th>
+                        <th>MP</th>
+                        <th>Starts</th>
+                        <th>Mins</th>
+                        <th>Goals</th>
+                        <th>Assists</th>
+                        <th>G+A</th>
+                        <th>G-PK</th>
+                        <th>PK</th>
+                        <th>Yellow Cards</th>
+                        <th>Red Cards</th>
+                        <th>xG</th>
+                        <th>xAG</th>
+                    </tr>
+                    </thead>
+                    <tbody id="position-stats-body">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+</main>
+
+<script src="positions.js"></script>
+</body>
+</html>

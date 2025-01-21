@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Search by Countries</title>
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+<header>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="players.html">Players</a></li>
+      <li><a href="clubs.html">Clubs</a></li>
+      <li><a href="countries.html">Countries</a></li>
+      <li><a href="positions.html">Position</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section id="search">
+    <h2>Search for Players by Country</h2>
+    <input type="text" id="search-bar" placeholder="Enter country name">
+    <button id="search-btn">Search</button>
+  </section>
+
+  <section id="country-stats-section" style="display:none;">
+    <h2>Players from <span id="country-name"></span></h2>
+    <div class="table-container">
+      <table>
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>Nation</th>
+          <th>Position</th>
+          <th>Club</th>
+          <th>Age</th>
+          <th>Year Born</th>
+          <th>MP</th>
+          <th>Starts</th>
+          <th>Mins</th>
+          <th>Goals</th>
+          <th>Assists</th>
+          <th>G+A</th>
+          <th>G-PK</th>
+          <th>PK</th>
+          <th>Yellow Cards</th>
+          <th>Red Cards</th>
+          <th>xG</th>
+          <th>xAG</th>
+        </tr>
+        </thead>
+        <tbody id="country-stats-body"></tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+
+<script src="countries.js"></script>
+</body>
+</html>

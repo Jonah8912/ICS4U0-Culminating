@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TopBallerStats.com</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="players.html">Players</a></li>
+            <li><a href="clubs.html">Clubs</a></li>
+            <li><a href="countries.html">Countries</a></li>
+            <li><a href="positions.html">Position</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <!-- Home Page Content -->
+    <section id="home">
+        <h1>Welcome to TopBallerStats</h1>
+        <p>View stats from your favourite Premier League players.</p>
+        <ul>
+            <li>Search player stats by name.</li>
+            <li>View stats by clubs, countries, and positions.</li>
+            <li>Explore player rankings and detailed performance metrics.</li>
+        </ul>
+    </section>
+
+    <!-- Example Search Sections for Other Pages (players.html, clubs.html, etc.) -->
+    <!-- Players Page -->
+    <section id="players" style="display:none;">
+        <h2>Search for a Player</h2>
+        <input type="text" id="player-search" placeholder="Enter player name">
+        <button id="player-search-btn">Search</button>
+        <div id="player-results">
+
+        </div>
+    </section>
+
+    <!-- Clubs Page -->
+    <section id="clubs" style="display:none;">
+        <h2>Search by Club</h2>
+        <input type="text" id="club-search" placeholder="Enter club name">
+        <button id="club-search-btn">Search</button>
+        <div id="club-results">
+
+        </div>
+    </section>
+
+    <!-- Countries Page -->
+    <section id="countries" style="display:none;">
+        <h2>Search by Country</h2>
+        <input type="text" id="country-search" placeholder="Enter country">
+        <button id="country-search-btn">Search</button>
+        <div id="country-results">
+
+        </div>
+    </section>
+
+    <!-- Positions Page -->
+    <section id="positions" style="display:none;">
+        <h2>Search by Position</h2>
+        <input type="text" id="position-search" placeholder="Enter position (e.g., FW, MF, DF)">
+        <button id="position-search-btn">Search</button>
+        <div id="position-results">
+
+        </div>
+    </section>
+</main>
+
+
+
+<script src="players.js"></script>
+</body>
+</html>
