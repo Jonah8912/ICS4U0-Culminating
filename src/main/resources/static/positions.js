@@ -1,3 +1,4 @@
+// Dropdown change event for selecting a position
 document.getElementById("position-dropdown").addEventListener("change", () => {
     const fullPositionName = document.getElementById("position-dropdown").value;
 
@@ -18,7 +19,7 @@ document.getElementById("position-dropdown").addEventListener("change", () => {
         return;
     }
 
-    // Fetch data for the selected position
+    // Fetch data for the selected position 
     fetch(`http://www.topballerstats.live/player?position=${encodeURIComponent(positionAbbreviation)}`)
         .then((response) => {
             if (!response.ok) {
@@ -31,9 +32,10 @@ document.getElementById("position-dropdown").addEventListener("change", () => {
             const statsBody = document.getElementById("position-stats-body");
             const positionNameHeader = document.getElementById("position-name");
 
-            statsSection.style.display = "block"; // Show the stats section
-            statsBody.innerHTML = ""; // Clear previous table data
-            positionNameHeader.textContent = fullPositionName; // Update the header
+            // Show the stats section and clear previous table data
+            statsSection.style.display = "block";
+            statsBody.innerHTML = "";
+            positionNameHeader.textContent = fullPositionName;
 
             if (data.length === 0) {
                 statsBody.innerHTML = `

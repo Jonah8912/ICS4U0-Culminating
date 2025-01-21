@@ -5,6 +5,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+/**
+ * Entity class representing a player's statistics.
+ */
 @Entity
 @Table(name = "player_statistic")
 public class Player {
@@ -14,43 +17,34 @@ public class Player {
     private String name;
 
     private String nation;
-
     private String position;
-
     private String team_name;
-
     private Integer age;
-
     private Integer year_born;
-
     private Integer matches_played;
-
     private Integer starts;
-
     private Integer minutes_played;
-
     private Integer goals;
-
     private Integer assists;
-
     private Integer goals_assists;
-
     private Integer goals_assists_nopk;
-
     private Integer penalties_scored;
-
     private Integer yellow_cards;
-
     private Integer red_cards;
-
     private Double expected_goals;
-
     private Double expected_assists;
 
+    /**
+     * Default constructor.
+     */
     public Player() {
     }
 
+    /**
+     * Parameterized constructor to initialize all fields.
+     */
     public Player(String name, String nation, String position, String team_name, Integer age, Integer year_born, Integer matches_played, Integer starts, Integer minutes_played, Integer goals, Integer assists, Integer goals_assists, Integer goals_assists_nopk, Integer penalties_scored, Integer yellow_cards, Integer red_cards, Double expected_goals, Double expected_assists) {
+        // Initialize all fields
         this.name = name;
         this.nation = nation;
         this.position = position;
@@ -70,6 +64,8 @@ public class Player {
         this.expected_goals = expected_goals;
         this.expected_assists = expected_assists;
     }
+
+    // Getter and setter methods for all fields
 
     public String getName() {
         return name;

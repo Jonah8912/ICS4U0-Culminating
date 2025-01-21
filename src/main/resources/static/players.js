@@ -1,3 +1,4 @@
+// Search button click event
 document.getElementById("search-btn").addEventListener("click", () => {
     const playerName = document.getElementById("search-bar").value.trim();
 
@@ -18,8 +19,9 @@ document.getElementById("search-btn").addEventListener("click", () => {
             const statsBody = document.getElementById("player-stats-body");
             const statsSection = document.getElementById("player-stats-section");
 
-            statsBody.innerHTML = ""; // Clear previous results
-            statsSection.style.display = "block"; // Show the stats section
+            // Clear previous results and show the stats section
+            statsBody.innerHTML = "";
+            statsSection.style.display = "block";
 
             if (data.length === 0) {
                 statsBody.innerHTML = `
@@ -27,6 +29,7 @@ document.getElementById("search-btn").addEventListener("click", () => {
                         <td colspan="18" style="text-align: center;">Player not found. Please try a different search.</td>
                     </tr>`;
             } else {
+                // Populate the table with player data
                 data.forEach((player) => {
                     const row = document.createElement("tr");
                     row.innerHTML = `
