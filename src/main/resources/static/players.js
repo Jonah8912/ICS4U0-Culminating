@@ -8,7 +8,7 @@ document.getElementById("search-btn").addEventListener("click", () => {
     }
 
     // Fetch player stats based on the entered name
-    fetch(`http://topballerstats.live/player?name=${encodeURIComponent(playerName)}`)
+    fetch(`https://topballerstats.live/player?name=${encodeURIComponent(playerName)}`)
         .then((response) => {
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);

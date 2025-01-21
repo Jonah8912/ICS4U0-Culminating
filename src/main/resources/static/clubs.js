@@ -8,7 +8,7 @@ document.getElementById("search-btn").addEventListener("click", () => {
     }
 
     // Fetch data from the backend
-    fetch(`http://topballerstats.live/player?team=${encodeURIComponent(clubName)}`)
+    fetch(`https://topballerstats.live/player?team=${encodeURIComponent(clubName)}`)
         .then((response) => {
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
