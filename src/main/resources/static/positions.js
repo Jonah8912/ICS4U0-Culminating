@@ -20,7 +20,7 @@ document.getElementById("position-dropdown").addEventListener("change", () => {
     }
 
     // Fetch data for the selected position 
-    fetch(`http://www.topballerstats.live/player?position=${encodeURIComponent(positionAbbreviation)}`)
+    fetch(`http://topballerstats.live/player?position=${encodeURIComponent(positionAbbreviation)}`)
         .then((response) => {
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
