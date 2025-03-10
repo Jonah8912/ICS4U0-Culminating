@@ -1,4 +1,3 @@
-// Search button click event
 document.getElementById("search-btn").addEventListener("click", () => {
     const clubName = document.getElementById("search-bar").value.trim();
 
@@ -7,7 +6,6 @@ document.getElementById("search-btn").addEventListener("click", () => {
         return;
     }
 
-    // Fetch data from the backend
     fetch(`https://topballerstats.live/player?team=${encodeURIComponent(clubName)}`)
         .then((response) => {
             if (!response.ok) {
@@ -19,7 +17,6 @@ document.getElementById("search-btn").addEventListener("click", () => {
             const statsSection = document.getElementById("club-stats-section");
             const statsBody = document.getElementById("club-stats-body");
 
-            // Show the stats section and clear any previous results
             statsSection.style.display = "block";
             statsBody.innerHTML = "";
 
@@ -31,7 +28,6 @@ document.getElementById("search-btn").addEventListener("click", () => {
                 return;
             }
 
-            // Populate the table with data
             data.forEach((player) => {
                 const row = document.createElement("tr");
                 row.innerHTML = `

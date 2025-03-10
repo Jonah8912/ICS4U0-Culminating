@@ -1,4 +1,3 @@
-// Search button click event
 document.getElementById("search-btn").addEventListener("click", () => {
     const countryName = document.getElementById("search-bar").value.trim();
 
@@ -7,7 +6,6 @@ document.getElementById("search-btn").addEventListener("click", () => {
         return;
     }
 
-    // Fetch data from the backend
     fetch(`https://topballerstats.live/player?nation=${encodeURIComponent(countryName)}`)
         .then((response) => {
             if (!response.ok) {
@@ -20,7 +18,6 @@ document.getElementById("search-btn").addEventListener("click", () => {
             const statsBody = document.getElementById("country-stats-body");
             const countryNameHeader = document.getElementById("country-name");
 
-            // Show the stats section and clear any previous results
             statsSection.style.display = "block";
             statsBody.innerHTML = "";
             countryNameHeader.textContent = countryName;
@@ -33,7 +30,6 @@ document.getElementById("search-btn").addEventListener("click", () => {
                 return;
             }
 
-            // Populate the table with data
             data.forEach((player) => {
                 const row = document.createElement("tr");
                 row.innerHTML = `

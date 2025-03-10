@@ -1,14 +1,11 @@
-// Search button click event
 document.getElementById("search-btn").addEventListener("click", () => {
     const playerName = document.getElementById("search-bar").value.trim();
 
-    if (!playerName) {
-        alert("Please enter a player name.");
-        return;
-    }
+    const url = playerName
+        ? `https://topballerstats.live/player?name=${encodeURIComponent(playerName)}`
+        : "https://topballerstats.live/player";
 
-    // Fetch player stats based on the entered name
-    fetch(`https://topballerstats.live/player?name=${encodeURIComponent(playerName)}`)
+    fetch(url)
         .then((response) => {
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
@@ -19,38 +16,38 @@ document.getElementById("search-btn").addEventListener("click", () => {
             const statsBody = document.getElementById("player-stats-body");
             const statsSection = document.getElementById("player-stats-section");
 
-            // Clear previous results and show the stats section
             statsBody.innerHTML = "";
             statsSection.style.display = "block";
 
             if (data.length === 0) {
                 statsBody.innerHTML = `
                     <tr>
-                        <td colspan="18" style="text-align: center;">Player not found. Please try a different search.</td>
+                        <td colspan="18" style="text-align: center;">
+                            ${playerName ? "Player not found. Please try a different search." : "No players found."}
+                        </td>
                     </tr>`;
             } else {
-                // Populate the table with player data
                 data.forEach((player) => {
                     const row = document.createElement("tr");
                     row.innerHTML = `
-                        <td>${player.name}</td>
-                        <td>${player.nation}</td>
-                        <td>${player.position}</td>
-                        <td>${player.team_name}</td>
-                        <td>${player.age}</td>
-                        <td>${player.year_born}</td>
-                        <td>${player.matches_played}</td>
-                        <td>${player.starts || "N/A"}</td>
-                        <td>${player.minutes_played || "N/A"}</td>
-                        <td>${player.goals}</td>
-                        <td>${player.assists}</td>
-                        <td>${player.goals_assists}</td>
-                        <td>${player.goals_assists_nopk}</td>
-                        <td>${player.penalties_scored}</td>
-                        <td>${player.yellow_cards}</td>
-                        <td>${player.red_cards || "N/A"}</td>
-                        <td>${player.expected_goals.toFixed(2)}</td>
-                        <td>${player.expected_assists.toFixed(2)}</td>
+                        <td>${player.name || "N/A"}</td>
+                        <td>${player.nation || "N/A"}</td>
+                        <td>${player.position || "N/A"}</td>
+                        <td>${player.team_name || "N/A"}</td>
+                        <td>${player.age || "N/A"}</td>
+                        <td>${player.year_born || "N/A"}</td>
+                        <td>${player.matches_played || "N/A"}</td>
+                        <td>${player.starts ?? "N/A"}</td>
+                        <td>${player.minutes_played ?? "N/A"}</td>
+                        <td>${player.goals ?? "0"}</td>
+                        <td>${player.assists ?? "0"}</td>
+                        <td>${player.goals_assists ?? "0"}</td>
+                        <td>${player.goals_assists_nopk ?? "0"}</td>
+                        <td>${player.penalties_scored ?? "0"}</td>
+                        <td>${player.yellow_cards ?? "0"}</td>
+                        <td>${player.red_cards ?? "0"}</td>
+                        <td>${player.expected_goals ? player.expected_goals.toFixed(2) : "N/A"}</td>
+                        <td>${player.expected_assists ? player.expected_assists.toFixed(2) : "N/A"}</td>
                     `;
                     statsBody.appendChild(row);
                 });

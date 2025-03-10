@@ -1,8 +1,6 @@
-// Dropdown change event for selecting a position
 document.getElementById("position-dropdown").addEventListener("change", () => {
     const fullPositionName = document.getElementById("position-dropdown").value;
 
-    // Map full position names to their abbreviations
     const positionAbbreviations = {
         Forward: "FW",
         Midfielder: "MF",
@@ -10,16 +8,13 @@ document.getElementById("position-dropdown").addEventListener("change", () => {
         Goalkeeper: "GK",
     };
 
-    // Get the abbreviated position name
     const positionAbbreviation = positionAbbreviations[fullPositionName];
 
-    // Check if the selection is valid
     if (!positionAbbreviation) {
         console.error("Invalid position selected!");
         return;
     }
 
-    // Fetch data for the selected position 
     fetch(`https://topballerstats.live/player?position=${encodeURIComponent(positionAbbreviation)}`)
         .then((response) => {
             if (!response.ok) {
@@ -32,7 +27,6 @@ document.getElementById("position-dropdown").addEventListener("change", () => {
             const statsBody = document.getElementById("position-stats-body");
             const positionNameHeader = document.getElementById("position-name");
 
-            // Show the stats section and clear previous table data
             statsSection.style.display = "block";
             statsBody.innerHTML = "";
             positionNameHeader.textContent = fullPositionName;
@@ -45,7 +39,6 @@ document.getElementById("position-dropdown").addEventListener("change", () => {
                 return;
             }
 
-            // Populate the table with data
             data.forEach((player) => {
                 const row = document.createElement("tr");
                 row.innerHTML = `

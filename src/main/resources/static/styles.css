@@ -83,8 +83,8 @@ main {
 }
 
 #dropdown-container {
-    text-align: center; /* Center the container */
-    margin-bottom: 20px; /* Add spacing below the dropdown */
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 #dropdown-container label {
@@ -95,7 +95,7 @@ main {
 }
 
 #position-dropdown {
-    width: 250px; /* Sets a fixed width for the dropdown */
+    width: 250px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -184,7 +184,7 @@ table td {
 
 @media screen and (max-width: 768px) {
     #title-section {
-        flex-direction: column; /* Stack title and logo vertically */
+        flex-direction: column;
         align-items: center;
     }
 
